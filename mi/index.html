@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米官网</title>
+</head>
+<link rel="stylesheet" href="./css/resset.css">
+<style>
+    div {
+        display: block;
+    }
+
+    /* 设置头部的宽度1349px，高度为40px */
+    .head {
+        width: 1349px;
+        height: 40px;
+        background-color: black;
+        font-size: 12px;
+
+
+    }
+
+    /* 设置导航栏之间的间隔 */
+    .sep {
+        margin: 0 .3em;
+        color: #424242;
+        font-size: 12px;
+    }
+
+    .sep1 {
+        margin: 0 .6em;
+        color: #424242;
+        font-size: 12px;
+    }
+
+    /* 设置 导航栏 登录，注册购物车之间的间隔 */
+    .sep2 {
+        margin: 0 .5em;
+        color: #ccc;
+        font-size: 16px;
+    }
+
+    /* 设置产品类型间的间隔 */
+    .sep3 {
+        margin: 0 .6em;
+        color: #424242;
+        font-size: 14px;
+    }
+
+    .sep4 {
+        margin: 0 .2em;
+        color: #424242;
+        font-size: 14px;
+    }
+
+    /* 设置导航栏呈水平方向摆放 */
+    li {
+        display: inline;
+        line-height: 40px;
+    }
+
+    /* 让导航栏距离左边60px */
+    .item li:first-child {
+        margin-left: 60px;
+    }
+/* 
+    .item a{
+        display: block;
+    } */
+
+    .nav_a {
+        text-decoration: none;
+        color: #b0b0b0;
+       
+    }
+
+    .nav_a:hover {
+        color: white;
+    }
+
+    /* 登录按钮样式 */
+    .login {
+        text-decoration: none;
+        color: #b0b0b0;
+        margin-left: 250px;
+        /* white-space:normal */
+        line-height: 40px;
+
+    }
+
+    /* 注册样式 */
+    .register {
+        text-decoration: none;
+        color: #b0b0b0;
+
+        line-height: 40px;
+
+    }
+
+    /* 消息通知 */
+    .notice {
+        text-decoration: none;
+        color: #b0b0b0;
+        line-height: 40px;
+    }
+
+    .login:hover,
+    .register:hover,
+    .notice:hover,
+    .infocat:hover {
+        color: white;
+    }
+
+    /* 购物车 */
+    .infocat {
+        margin-left: 42px;
+        text-decoration: none;
+        color: #b0b0b0;
+        line-height: 40px;
+
+    }
+
+    .container {
+        width: 1266px;
+        height: 20px;
+
+
+    }
+
+
+    /* 设置图片的大小和位置 */
+    .pic {
+
+        width: 55px;
+        height: 55px;
+        margin-top: -100px;
+        margin-left: 60px;
+
+        /* position: relative; */
+
+    }
+
+    /* 设置container 导航栏距离左边300px */
+    .container li:first-child {
+        margin-left: 300px;
+    }
+
+    .nav_list {
+        display: inline-block;
+        text-decoration: none;
+        color: #333;
+
+    }
+
+    .nav_list:hover {
+        color: orangered;
+    }
+
+    /* 调整container距离上面的高度 */
+    .nav_list1 {
+
+        margin-top: -4px;
+        padding-top: 22px;
+        /* position: absolute; */
+    }
+
+    /* .xiaomi_phone{
+        display: none;
+        width: 100%;
+        height: 230px;
+        background-color: white;
+        z-index: 9999;
+        margin-top: 30px;
+        margin-left: 0px;
+        border-top: 1px #ccc solid;
+        position: absolute;
+        box-shadow: 0 0 10px 0.3;
+    }
+
+    .xiaomi_p:hover .xiaomi_phone {
+        display: block;
+    }
+
+    .redmi_p:hover .xiaomi_phone {
+        display: block;
+    } */
+
+    .search {
+        width: 200px;
+        height: 40px;
+        border: 1px #ccc solid;
+        padding-left: 20px;
+        margin-left: 1000px;
+        margin-top: 19px;
+        line-height: 40px;
+    }
+
+    .search_button {
+        width: 43px;
+        height: 40px;
+        margin-left: 1220px;
+        margin-top: -42px;
+        border: 1px #ccc solid;
+    }
+
+    .search-btn {
+        width: 43px;
+        height: 40px;
+        /* margin-left: 1220px;
+        margin-top: -32px; */
+    }
+
+    .seartch_pic {
+        width: 40px;
+        height: 40px;
+        /* margin-top: 60px;
+         margin-left: 1200px; */
+    }
+
+    .type_list {
+        width: 234px;
+        height: 435px;
+        padding-top: 24px;
+        margin-left: 60px;
+        margin-top: 80px;
+        background-color: rgba(105, 101, 101, 0.6)
+    }
+
+    .pro_list a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #ffffff;
+        display: block;
+        padding-left: 20px;
+
+
+    }
+
+    .pro_list a:hover {
+        text-decoration: none;
+        font-size: 14px;
+        background-color: #ff6700;
+        ;
+        display: block;
+        padding-left: 20px;
+
+    }
+
+    .nav_v {
+        font-size: 18px;
+        margin-left: 107px;
+    }
+
+    .nav_v1 {
+        font-size: 18px;
+        margin-left: 119px;
+    }
+
+    .nav_2 {
+        font-size: 18px;
+        margin-left: 73px;
+    }
+
+    /* 轮播图容器 */
+    .img-list {
+        /* width: 994px;
+        height: 460px; */
+        margin-top: -459px;
+        margin-left: 294px;
+        position: relative;
+    }
+
+    /* 轮播提以100%的样式展现 */
+    .img-list img {
+        width: 977px;
+        height: 460px;
+
+    }
+
+    .img-list li {
+        position: absolute;
+    }
+
+    .img-list li:nth-child(1) {
+        z-index: 99;
+    }
+
+    .pointer {
+        z-index: 999;
+        position: absolute;
+    }
+
+    .pointer a {
+        display: block;
+        float: left;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #42414180;
+        margin-left: 8px;
+        margin-top: 410px;
+
+    }
+
+    .pointer a:hover {
+        display: block;
+        float: left;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 1.5px #42414180 solid;
+        background-color: transparent;
+        background-clip: content-box;
+        margin-left: 8px;
+        margin-top: 410px;
+    }
+
+    .pointer a:nth-child(1) {
+        margin-left: 100px;
+    }
+
+    .btn {
+        z-index: 9999;
+        position: absolute;
+    }
+
+    .btn a {
+        width: 41px;
+        height: 69px;
+        background-color: transparent;
+        margin-left: 891px;
+        float: left;
+        margin-top: 218px;
+    }
+
+    .btn a:nth-child(1) {
+        margin-left: 0px;
+        margin-top: 218px;
+    }
+
+    .btn_left:hover,
+    .btn_right:hover {
+        width: 41px;
+        height: 69px;
+        background-color: #ccc;
+        margin-left: 891px;
+        float: left;
+        margin-top: 218px;
+
+    }
+
+    .btn_left {
+        width: 15px;
+        height: 15px;
+        color: #ccc;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .btn img {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 29px;
+    }
+
+    .nav_three {
+        /* display: flex; */
+        height: 171px;
+        width: 100%;
+        background-color: transparent;
+        margin-top: 468px;
+        display: flex;
+    }
+
+    .six {
+        display: flex;
+        width: 234px;
+        height: 170px;
+        background-color: #333333;
+        margin-left: 60px;
+    }
+
+    .six li {
+        width: 76px;
+        height: 82px;
+        float: left;
+        margin-left: 2px;
+        margin-top: 0px;
+        font-size: 12px;
+        color: #ffffff;
+    }
+
+    .six li::after {
+        width: 1px;
+        height: 70px;
+        background-color: #665e57;
+    }
+
+    .six a {
+        display: flex;
+        width: 70px;
+        height: 64px;
+        background-color: transparent;
+        flex-wrap: wrap;
+        text-decoration: none;
+        margin-left: 12px;
+        margin-top: -2px;
+        color: #ffffff;
+    }
+
+    .six img {
+        width: 24px;
+        height: 24px;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    .phone {
+        width: 992px;
+        height: 170px;
+        float: left;
+        background-color: transparent;
+        margin-left: 0px;
+    }
+
+    .phone img {
+        width: 316px;
+        height: 170px;
+        margin-left: 8px;
+    }
+
+    .phone img :nth-child(1) {
+        margin-left: 10px;
+    }
+
+    .main_home {
+
+        width: 100%;
+        height: 6035px;
+        background-color: #f5f5f5;
+        margin-top: 28px;
+    }
+
+    h2 {
+        width: 100%;
+        height: 58px;
+        line-height: 58px;
+        font-size: 22px;
+        color: #333333;
+        background-color: #f5f5f5;
+        margin-left: 60px;
+    }
+
+    .xianshi {
+        width: 234px;
+        height: 340px;
+        background-color: #f1eded;
+        margin-left: 60px;
+
+    }
+
+    .xinshi_time {
+        font-size: 21px;
+        color: #ef5a5b;
+        margin-top: -108px;
+        margin-left: 79px;
+    }
+
+    .xianshi img {
+        width: 34px;
+        height: 53px;
+        margin-left: 98px;
+        margin-top: 109px;
+    }
+
+    .dec {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 69px;
+        margin-top: 119px;
+    }
+
+    .timer {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .timer :nth-child(1) {
+        margin-left: 30px;
+    }
+
+    .time {
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        background-color: #675051;
+        margin-left: 15px;
+        margin-top: 35px;
+        font-size: 24px;
+        color: #ffffff;
+    }
+
+    .i {
+        width: 2px;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        background-color: transparent;
+        color: #675051;
+        font-size: 28px;
+        margin-top: 35px;
+        padding-left: 3px;
+
+    }
+
+    .xian_list_img {
+        height: 339px;
+        width: 983px;
+        margin-left: 305px;
+        margin-top: -339px;
+        background-color: transparent;
+    }
+
+    .xian_list_img img {
+        margin-left: 7px;
+    }
+
+    .nav_phone {
+        margin-left: 57px;
+        margin-top: 15px;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="head">
+            <ul class="item">
+                <li><a class="nav_a" href="#">小米商城</a></li> <span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://home.miui.com/">MIUI</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://iot.mi.com/new/index.html"> Iot</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://i.mi.com/">云服务</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://jr.mi.com/?from=micom"> 金融</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://www.xiaomiyoupin.com/">有品</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://xiaoai.mi.com/">小爱开发平台</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://qiye.mi.com/">企业团购</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://www.mi.com/aptitude/list?id=41"> 资质证照</a> </li><span class="sep">
+                    |</span>
+                <li> <a class="nav_a" href="https://www.mi.com/aptitude/list">协议规则</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="https://www.mi.com/appdownload">下载app</a> </li><span class="sep"> |</span>
+                <li> <a class="nav_a" href="#"> SelectLocation</a> </li>
+
+                <li><a class="login"
+                        href="https://account.xiaomi.com/pass/serviceLogin?callback=https%3A%2F%2Forder.mi.com%2Flogin%2Fcallback%3Ffollowup%3Dhttps%253A%252F%252Fwww.mi.com%252Findex.html%26sign%3DMjM0MWU0NjBlOTU1YzY4NGQzOTc3MDk4N2M2MjQ5Y2ZiZTMxNTFlZQ%2C%2C&sid=mi_eshop&_bannerBiz=mistore&_qrsize=180">登录</a>
+                </li><span class="sep1"></span>
+                <li> <a class="register" href="#">注册</a></li><span class="sep1"></span>
+                <li><a class="notice" href="#">消息通知</a></li>
+
+                <li><a class="infocat icon-xiazai1" href="https://static.mi.com/cart/"><i class="icon icon-xiazai1"></i>购物车(0)</a></li>
+
+            </ul>
+
+            <div class="search"> 米家超级电池
+            </div>
+            <div class="search_button">
+                <input type="hidden" class="search-btn">
+                <img class="seartch_pic" src="./img/seartch.jpg" alt="">
+            </div>
+        </div>
+        <div class="container">          
+                <ul class="nav_list1">                              
+                <li><a class="nav_list" href="#">小米手机</a><li class="xiaomi_phone"></li></li><span class="sep2"> </span>                      
+                <li><a class="nav_list " href="#">Redmi手机</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">电视</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">笔记本</a></li><span class="sep2"></span>
+                <li><a class="nav_list" href="#">家电</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">路由器</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">智能硬件</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">服务</a></li><span class="sep2"> </span>
+                <li><a class="nav_list" href="#">社区</a></li>
+                </ul>
+        </div>
+
+        <div>
+            <ul class="type_list">
+                <li class="pro_list"><a href="https://www.mi.com/p/1915.html">手机<span class="sep4"></span>电话卡<span
+                            class="nav_v">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/a/h/9819.html">电视<span class="sep4"></span>盒子<span
+                            class="nav_v1">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/a/h/7529.html">笔记<span class="sep4"></span>显示器<span
+                            class="sep4"></span>平板<span class="nav_2">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9285.html">家电<span class="sep4"></span>插线板<span
+                            class="nav_v">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9289.html">出行<span class="sep4"></span>穿戴<span
+                            class="nav_v1">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/a/h/8363.html">智能<span class="sep4"></span>路由器<span
+                            class="nav_v">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9290.html">电源<span class="sep4"></span>配件<span
+                            class="nav_v1">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9291.html">健康<span class="sep4"></span>儿童<span
+                            class="nav_v1">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9292.html">耳机<span class="sep4"></span>音箱<span
+                            class="nav_v1">></span></a></li>
+                <li class="pro_list"><a href="https://www.mi.com/p/9293.html">生活<span class="sep4"></span>箱包<span
+                            class="nav_v1">></span></a></li>
+            </ul>
+
+            <ul class="img-list">
+                <li><a href="javascript:;"><img src="./img/main1.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/main2.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/main3.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/main4.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/main5.jpg" alt=""></a></li>
+                <div>
+                    <ul class="btn">
+                        <a href="" class="btn_left"><img src="./img/left.png" alt=""></a>
+                        <a href="" class="btn_right"><img src="./img/right.png" alt=""></a>
+
+                    </ul>
+                </div>
+                <div>
+                    <ul class="pointer">
+                        <a href="javascript" class="cur"></a>
+                        <a href="javascript"></a>
+                        <a href="javascript"></a>
+                        <a href="javascript"></a>
+                        <a href="javascript"></a>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="nav_three">
+            <div class="six">
+                <ul>
+                    <li><a href="https://www.mi.com/seckill"><img src="./img/miaosha.png" alt="">小米秒杀</a></li>
+                    <li><a href="https://qiye.mi.com/"><img src="./img/tuangou.png" alt="">企业团购</a></li>
+                    <li> <a href="https://www.mi.com/order/fcode"><img src="./img/f.png" alt="">F码通道</a></li>
+                    <li> <a href="https://www.mi.com/mimobile"><img src="./img/mifen.png" alt="">米粉卡</a></li>
+                    <li><a href="https://huanxin.mi.com/"><img src="./img/jiu.png" alt="">以旧换新</a></li>
+                    <li><a
+                            href="https://account.xiaomi.com/pass/serviceLogin?callback=http%3A%2F%2Frecharge.10046.mi.com%2Fsts%3Fsign%3DbC%252Bk1yrraTJbriZ0UbiV7hfzHz4%253D%26followup%3Dhttp%253A%252F%252Frecharge.10046.mi.com%252F&sid=recharge"><img
+                                src="./img/chongzhi.png" alt="">话费充值</a></li>
+                </ul>
+            </div class="phone_new">
+            <ul class="phone">
+                <li> <a href="http://www.mi.com/redminote8"><img src="./img/redminote8.jpg" alt=""></a></li>
+                <li> <a href="https://www.mi.com/buy/detail?product_id=10000203"><img src="./img/redmik30.jpg"
+                            alt=""></a></li>
+                <li> <a href="https://www.mi.com/shouhuan4"><img src="./img/小米手环.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="main_home">
+            <h2>小米闪购</h2>
+            <div>
+
+                <div class="xianshi"><img src="./img/下载.jpg" alt="">
+                    <div class="xinshi_time">10:00 场</div>
+                    <div class="dec">距离结束还有</div>
+
+                    <div class="timer">
+                        <div class="time">00</div>
+                        <div class="i">:</div>
+                        <div class="time">00</div>
+                        <div class="i">:</div>
+                        <div class="time">00 </div>
+                    </div>
+
+                </div>
+                <div>
+                    <ul class="xian_list_img">
+                        <li> <a href="https://www.mi.com/seckill"><img src="./img/compute.png" alt=""></a></li>
+                        <li> <a href="https://www.mi.com/seckill"><img src="./img/erji.png" alt=""></a</li>
+                        <li> <a href="https://www.mi.com/seckill"><img src="./img/显示器.png" alt=""></a></li>
+                        <li> <a href="https://www.mi.com/seckill"><img src="./img/空调.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="nav_phone"> <a href="https://www.mi.com/buy/detail?product_id=10000229"></a><img
+                        src="./img/nav_phone.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
