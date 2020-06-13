@@ -1,0 +1,162 @@
+DOCTYPE HTML>
+<html>
+	<head>
+		<title>拖拽照片</title>
+ <embed src="张笑晨 - 可不可以勇敢.mp3" hidden="true" autostart="true" loop="true">
+		<meta charset="utf-8">
+		<meta name="Author" content="">
+               
+		<style type='text/css'>
+                                    
+			*{ margin:0; padding:0;}
+			body{
+				background:#000;
+				overflow:hidden;
+			}
+			#perspective{
+				perspective:800px;
+			}
+			#wrap{
+				width:120px;  /*133:200  4:6  */
+				height:180px;
+				margin:0 auto;
+				position:relative;
+
+				/*搭建3D效果必须的两个属性：一个变换风格变3d，一个场景景深800px*/
+				transform-style:preserve-3d;
+				transform:rotateX(-10deg) rotateY(0deg);
+				
+			}
+			#wrap img{
+				width:100%;
+				height:100%;
+				position:absolute;
+				border-radius:1px;
+				box-shadow:0 0 8px #f9f;
+				transform:rotateY(0deg) translateZ(0px);
+				/*倒影：朝向 偏移 遮盖*//*线性渐变(从哪里开始,开始时候的颜色,结束时候的颜色)*/
+				-webkit-box-reflect:below 5px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);
+			}
+			#wrap p{
+				width:1200px;
+				height:1200px;
+				background:-webkit-radial-gradient(center center,600px 600px,rgba(244,23,234,0.2),rgba(0,0,0,0));
+				border-radius:100%;
+				position:absolute;
+				left:50%;
+				top:102%;
+				margin-left:-600px;
+				margin-top:-600px;
+				transform:rotateX(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="perspective">
+			<div id='wrap'>
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/hQnKqSxBKpR5lk0qW.h.S4bzBb5Yof4M4KHK6lBBcyk!/b/dL8AAAAAAAAA&bo=OASABzgEgAcRFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/MM9oCxicPoPErTekxayqeYmDna5TgxHRSEII5Otn91U!/b/dL4AAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/ExJo1AWpbEdCvF00JAVixd.te.1bTadzrZXxtT3A4aU!/b/dEEBAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/qZ.sNxloWyZ08Egxu27DKsiXMqhlLMF249c7eKxQokc!/b/dL8AAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/Kfmmzl4fsQ*Ot9CscwNcf0h1od7mr4c1gIJ3LdKnNzs!/b/dMMAAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/mpDLqDUNRnWvJqRg9*ZX0C0Hz7.WcZ7e044Drlym9OE!/b/dL4AAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/Ekbr*xZLAW4C2L1paVep0OFG5.nPCb6tOvEkswX2.KA!/b/dDIBAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/3yjpDTBErVvqn9LBOqNLZUT9WUapeYQGeskCUIN5FqE!/b/dDYBAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/ZvIoR52OOiAooEouVMJIiPQ9ZyrgvWJkM4NK0f.2J3U!/b/dL8AAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/EhwXkdllMQ3io60RXIBTQyUIMmg0Yrzd0cOBl7jGcAI!/b/dL8AAAAAAAAA&bo=hQDIAIUAyAARFyA!&rf=viewer_4" />
+				<img src="http://m.qpic.cn/psb?/V11a6jP52dQ5IP/aV42qyyEHCGEHVEBNSAnsm.WqwzT.9DDEo8Jz9EKipQ!/b/dL8AAAAAAAAA&bo=gAJyBIACcgQRFyA!&rf=viewer_4" />
+
+				<p></p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			window.onload = function(){
+				var oWrap = document.getElementById('wrap');
+				var oImg = oWrap.getElementsByTagName('img');
+				var oImgLength = oImg.length;
+				var Deg = 360 / oImgLength;
+				var nowX , nowY , lastX , lastY , minusX = 0, minusY = 0;
+				var roY = 0 , roX = -10;
+				var timer;
+
+				for ( var i=0;i<oImgLength;i++ )
+				{
+					oImg[i].style.transform = 'rotateY('+ i*Deg +'deg) translateZ(350px)';
+					oImg[i].style.transition = 'transform 1s '+ (oImgLength-1-i)*0.1 +'s';
+
+				}
+
+				mTop();
+
+				window.onresize = mTop;
+
+				function mTop(){
+					var wH = document.documentElement.clientHeight;
+					oWrap.style.marginTop = wH / 2 - 180 + 'px';
+				}
+				
+				// 拖拽：三个事件-按下 移动 抬起
+				//按下
+				document.onmousedown = function(ev){
+					ev = ev || window.event;
+
+					//鼠标按下的时候，给前一点坐标赋值，为了避免第一次相减的时候出错
+					lastX = ev.clientX;
+					lastY = ev.clientY;
+					
+					//移动
+					this.onmousemove = function(ev){
+						ev = ev || window.event;
+
+						clearInterval( timer );
+
+						nowX = ev.clientX; // clientX 鼠标距离页面左边的距离
+						nowY = ev.clientY; // clientY ………………………………顶部………………
+
+						//当前坐标和前一点坐标差值
+						minusX = nowX - lastX; 
+						minusY = nowY - lastY;
+						
+						//更新wrap的旋转角度，拖拽越快-> minus变化大 -> roY变化大 -> 旋转快
+						roY += minusX*0.2; // roY = roY + minusX*0.2;
+						roX -= minusY*0.1;
+	 
+						oWrap.style.transform = 'rotateX('+ roX +'deg) rotateY('+ roY +'deg)';
+						
+						/*
+						//生成div，让div跟着鼠标动
+						var oDiv = document.createElement('div');
+						oDiv.style.cssText = 'width:5px;height:5px;background:red;position:fixed;left:'+nowX+'px;top:'+nowY+'px';
+						this.body.appendChild(oDiv);
+						*/
+						
+						//前一点的坐标
+						lastX = nowX;
+						lastY = nowY;
+
+					}
+					//抬起
+					this.onmouseup = function(){
+						this.onmousemove = null;
+						timer = setInterval(function(){
+							minusX *= 0.95;
+							minusY *= 0.95;
+							roY += minusX*0.2; // roY = roY + minusX*0.2;
+							roX -= minusY*0.1;
+							oWrap.style.transform = 'rotateX('+ roX +'deg) rotateY('+ roY +'deg)';
+
+							if ( Math.abs(minusX)<0.1 && Math.abs( minusY )<0.1 )
+							{
+								clearInterval( timer );
+							}
+							console.log( minusX );
+						},13);
+					}
+					return false;
+				}
+			}
+
+		</script>
+	</body>
+</html>
